@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: mysql-pv
+  namespace: mysql-namespace
+  labels:
+    app: mysql-label
+spec:
+  storageClassName: manual
+  capacity:
+    storage: 2Gi
+  accessModes: 
+    - ReadWriteMany
+
+  hostPath:
+    path: "/home/vboxuser/blogs/d35/my-data"
